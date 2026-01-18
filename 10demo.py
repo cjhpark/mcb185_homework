@@ -19,3 +19,17 @@ print(math.log2(8))
 print(math.sqrt(9))
 print(math.factorial(5))
 print(math.e)
+
+#Variables and Functions
+a = 3
+b = 4
+c = (a**2 + b**2)**0.5
+print(c)
+
+print(type(a), type(b), type(c), sep=', ', end='!\n')
+
+print()
+
+def right_hypotenuse(sidea, sideb):
+	return math.sqrt(sidea**2 + sideb**2)
+print(right_hypotenuse(3, 4))
