@@ -31,3 +31,24 @@ print(type(a), type(b), type(c), sep=', ', end='!\n')
 def right_hypotenuse(sidea, sideb):
 	return math.sqrt(sidea**2 + sideb**2)
 print(right_hypotenuse(3, 4))
+
+#Conditionals
+a = 2.0
+b = 2*1.0
+if a == b:
+	print('Apple')
+
+c = a == b
+print(c)
+print(type(c))
+
+if a < b or a > b: print('Cool')
+if a < b and a > b: print('How')
+if not False: print(True)
+
+if math.isclose(a, b): print('close')
+
+#None
+def banana(m, x, b):
+	y = m * x + b 
+print(banana(2, 3, 4))
