@@ -5,4 +5,4 @@ def threemaximum(x, y, z):
 	if y >= z: return y
 	else: return z
 
-print(threemaximum(5, 1, 3))
+print(threemaximum(5, 10, -3))
