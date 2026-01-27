@@ -1,6 +1,0 @@
-#Warmup Exercise 1 Chris Park
-
-1. Windows has two line endings and Unix has one.
-2. Overflow means utlizing a value greater than the maximum possible on your computer. Underflow is a value that is smaller than the minimum.
-3. You back to the root directory so it will print '/'
-4. grep frog . > ./pond
