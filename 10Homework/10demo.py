@@ -1,5 +1,6 @@
 #10demo.py Chris Park
 import math
+import random
 print("hello, again")
 
 #Scientific Notation
@@ -52,3 +53,27 @@ if math.isclose(a, b): print('close')
 def banana(m, x, b):
 	y = m * x + b 
 print(banana(2, 3, 4))
+
+#While
+i = 0
+while True:
+	i = i + 1
+	print('hey', i)
+	if i == 5: break
+
+#For and Range
+for i in range(1, 10, 3):
+	print(i)
+
+for i in range(0, 5):
+	print(i)
+
+for i in range(10):
+	print(i)
+
+#Random
+for i in range(5):
+	print(random.random())
+
+for i in range(3):
+	print(random.randint(1, 6))
