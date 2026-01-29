@@ -1,0 +1,17 @@
+#1. The .fa suffix means it is a fasta file and the '.gz' means it is compressed using the 'gzip' algorithm.
+#2. Flags are command arguments that are either 'ON' or 'OFF'.
+#3.^C means Ctrl + C and it breaks you out of what you are doing in the terminal. 
+#4.
+def is_prob(x):
+	if x <= 1 and x >= 0: return True
+	else: return False
+print(is_prob(-.3))
+print(is_prob(1))
+print(is_prob(0.5))
+print(is_prob(1.333))
+
+#5. 
+def distance(x1, y1, x2, y2):
+	return (((y2-y1)**2+(x2-x1)**2))**0.5
+print(distance(1, 0, 0, 1))
+print((2)**0.5)
