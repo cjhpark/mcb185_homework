@@ -1,0 +1,6 @@
+#prac_shannonfunction Chris Park
+
+def shannon(A, C, T, G):
+	return ...
+
+WORK IN PROGRESS...
