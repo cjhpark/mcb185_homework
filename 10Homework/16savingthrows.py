@@ -22,3 +22,5 @@ for i in range(25):
 	if kept_roll <= 5*difficulty_class: character_status = 'died.'
 
 	print('You had', advantage_str, 'and rolled', kept_roll, 'against difficulty class', 5*difficulty_class, 'and', character_status)
+
+#Another fun one, but slightly challenging. Not necessarily because I didn't know where to complete it, but rather complete it in a way that was somewhat efficient. I wanted to keep the 'if' statements to a minimum.
