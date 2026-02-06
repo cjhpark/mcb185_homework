@@ -1,0 +1,12 @@
+#prac_list_minimum Chris Park
+
+def list_minimum(x):
+	min = x[0]
+	for i in range(len(x)):
+		if x[i] < min: min = x[i]	
+	return min
+
+
+Test = [12, -3, 500, 3.441, 0, -30.1, 4]
+
+print(list_minimum(Test))
