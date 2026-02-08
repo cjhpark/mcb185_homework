@@ -1,0 +1,14 @@
+#prac_listminmax Chris Park
+
+def listminmax(x):
+	min = x[0]
+	max = x[0]
+	for i in range(len(x)):
+		if x[i] < min: min = x[i]
+		if x[i] > max: max = x[i]
+	return min, max
+
+Test = [100, 20, -3 , 34.3, 0]
+min, max = (listminmax(Test))
+print('The minimum is', min)
+print('The maximum is', max)

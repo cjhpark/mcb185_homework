@@ -1,0 +1,12 @@
+#prac_KLdistance Chris Park
+import math
+
+def KLdistance(P,Q):
+	sum = 0
+	for px, qx in zip(P, Q):
+		sum += px*math.log2(px/qx)
+	return sum
+
+Test1 = [.1, .2, .3, .4]
+Test2 = [.25, .25, .25, .25]
+print(KLdistance(Test1, Test2))

@@ -1,0 +1,11 @@
+#prac_listmean Chris Park
+
+def listmean(your_list):
+	total = 0
+	for i in range(len(your_list)):
+		total += your_list[i]
+	return total/len(your_list)
+
+
+Test = [5, 4, 3, 2, 1]
+print(listmean(Test))

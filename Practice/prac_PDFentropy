@@ -1,0 +1,11 @@
+#prac_PDFentropy Chris Park
+import math
+
+def PDFentropy(your_list):
+	sum = 0
+	for i in range(len(your_list)):
+		sum -= your_list[i]*math.log2(your_list[i])	
+	return sum
+
+Test = [.5, .23, .25, .99, .13]
+print(PDFentropy(Test))
