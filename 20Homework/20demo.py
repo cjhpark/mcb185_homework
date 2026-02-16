@@ -1,5 +1,6 @@
 #20demo.py Chris Park
 import math
+import sys
 
 
 print(len('Testing'))
@@ -89,3 +90,58 @@ print('index G?', alph.index('G'))
 #print('index Z?', alph.index('Z'))
 
 print('find G?', alph.find('G'))
+
+print(sys.argv)
+
+
+#Crazy
+#def crazy(s):
+#	for i in range(len(s)):
+#		if i % 2 == 0: print(i, s[i].upper())
+#		else: print(i, s[i].lower)
+#
+#filename = sys.argv[1]
+#with open(filename) as fp:
+#	for line in fp:
+#	crazyline = crazy(line)
+#	print(crazyline)
+
+#Anti
+
+def anti(dna):
+	comp = []
+	rev = dna[::-1]
+	for nt in rev:
+		if nt == 'A': comp.append('T')
+		if nt == 'G': comp.append('C')
+		if nt == 'C': comp.append('G')
+		if nt == 'T': comp.append('A')
+	return ''.join(comp)
+
+seq = input('Type sequence')
+print(seq)
+print(anti(seq))
+
+#maxlenstring
+def longest_str(s):
+	placeholder = s[0]
+	for i in range(len(s)):
+		if len(s[i]) > len(placeholder): placeholder = s[i]
+	return placeholder
+
+string =  ['ssssssssssssssssssssssss', 'a', '3.414', '34343434']
+print(longest_str(string))
+
+#Pairwise Comparison
+import sys
+import random
+
+classroom = []
+people = int(sys.argv[1])
+calendar = int(sys.argv[2])
+
+for i in range(people):
+	birthday = random.randint(0, calendar-1)
+	classroom.append(birthday)
+
+print(classroom)
