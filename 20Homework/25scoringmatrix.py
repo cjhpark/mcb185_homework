@@ -1,4 +1,3 @@
-
 #25scoringmatrix.py Chris Park
 
 import sys
@@ -21,3 +20,9 @@ for i in range(len(alphabet)):
 		if alphabet[i] == alphabet[j]:	matrixscores.append(matchscore)
 		if alphabet[i] != alphabet[j]:	matrixscores.append(mismatchscore)
 	print(alphabet[i], matrixscores)
+
+#Nicer header like this:
+#print('     ', end='')
+#for c in alph: print(c, end='')
+#print()
+#

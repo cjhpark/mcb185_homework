@@ -145,3 +145,28 @@ for i in range(people):
 	classroom.append(birthday)
 
 print(classroom)
+
+#Translation
+import itertools
+
+def translate(seq):
+	codons = [''.join(t) for t in itertools.product('ACGT', repeat=3)]
+	trans = 'KNKNTTTTRSRSIIMIQHQHPPPPRRRRLLLLEDEDAAAAGGGGVVVV*Y*YSSSS*CWCLFLF'
+#trans is the translation of all codons in alphabetical order
+	protein = ''
+	for i in range(0, len(seq), 3):
+#if you don't go by steps of 3, you will translate the +1 and +2 ORF too
+		codon = seq[i: i+3]
+		idx = codons.index(codon)
+#idx searches a library named 'codons'and returns the index of each inputted codon
+		aa = trans[idx]
+		protein += aa
+	return protein
+
+dna = 'AAAAAC'
+print(translate(dna))
+
+
+#You can have default values and override them with user inputs
+#Example: def random_dna(n, X=[a,b,c,d])
+#random_dna(10, X=[e,f,g,h])
