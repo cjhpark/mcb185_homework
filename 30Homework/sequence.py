@@ -1,4 +1,3 @@
-
 # sequence.py Chris Park
 
 def transcribe(dna):
