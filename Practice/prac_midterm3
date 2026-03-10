@@ -1,0 +1,95 @@
+# prac_midterm3 Chris Park
+import math
+import sys
+import random
+
+# 41 Scoring Matrix
+#values = sys.argv[1]
+#hit = sys.argv[2]
+#miss = sys.argv[3]
+#
+#print('    ', '    '.join(values))
+#for i in range(len(values)):
+#	nscores = []
+#	nscores.append(values[i])
+#	for j in range(len(values)):
+#		if values[i] == values[j]: nscores.append(hit)
+#		if values[i] != values[j]: nscores.append(miss)
+#	print('   '.join(nscores))
+
+# 42 Pythagorean Triples
+#for i in range(1, 100):
+#	for j in range(i+1, 100):
+#		if (i**2+j**2)**0.5 % 1 == 0 and (i**2+j**2)**0.5 < 100:
+#			print(i, j, (i**2+j**2)**0.5)
+
+# 43 Birthday Paradox 1
+#calendar = int(sys.argv[1])
+#birthdays = int(sys.argv[2])
+#trials = int(sys.argv[3])
+#
+#matches = 0
+#for k in range(trials):
+#    classroom = []
+#    for i in range(birthdays):
+#        bday = random.randint(0, calendar-1)
+#        if bday in classroom:
+#            print('Match')
+#            matches += 1
+#            break
+#        classroom.append(bday)
+#print(matches/trials)
+
+# 44 Birthday Paradox 2
+#calendar = int(sys.argv[1])
+#birthdays = int(sys.argv[2])
+#trials = int(sys.argv[3])
+#
+#matches2 = 0
+#for i in range(trials):
+#	calendarlist = [0] * calendar
+#	for k in range(birthdays):
+#		bday2 = random.randint(0, calendar-1)
+#		calendarlist[bday2] += 1
+#		if calendarlist[bday2] == 2:
+#			matches2 += 1
+#			break
+#print(matches2/trials)
+
+# 45 PolyA Length
+
+
+# 46 Character Count
+#s = 'abcabcabcdabcdabcdeabcde'
+#characters = []
+#char_count = []
+#
+#for c in s:
+#	if c not in characters:
+#		characters.append(c)
+#		char_count.append(1)
+#	else:
+#		idx = characters.index(c)
+#		char_count[idx] += 1
+#print(characters, char_count)
+
+# 47 Read FASTA
+
+
+# 48 GC Composition and Skew
+
+
+# 49 Entropy Masking
+def entropy(abc):
+	pa = abc.count('A')/len(abc)
+	pc = abc.count('C')/len(abc)
+	pg = abc.count('G')/len(abc)
+	pt = abc.count('T')/len(abc)
+	h = 0
+	if pa != 0: h -= pa*math.log2(pa)
+	if pc != 0: h -= pc*math.log2(pc)
+	if pg != 0: h -= pg*math.log2(pg)
+	if pt != 0: h -= pt*math.log(pt)
+	return h
+
+print(entropy('AAAAACCTGCGTCGT'))

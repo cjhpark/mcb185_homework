@@ -1,0 +1,114 @@
+# prac_midterm3 Chris Park
+# Midterm 3 is from 41 to 49. #49 will almost certainly be on the exam.
+# Practice using shell scripts like 'grep', 'cut', and '|'.
+# Consider practicing problems from Unit 1 and Unit 2.
+import sys
+import math
+import random
+
+# 41 ACGT Scoring Matrix
+# You are supposed to print the output exactly as shown, but I like to use \t spacers because if I change the 'plus' and 'minus' arguments, it still looks formatted
+alphabet = sys.argv[1]
+plus = sys.argv[2]
+minus = sys.argv[3]
+
+print('  ', '  '.join(alphabet))
+for i in range(len(alphabet)):
+	row_score = []
+	row_score.append(alphabet[i])
+	for j in range(len(alphabet)):
+		if alphabet[i] == alphabet[j]:
+			row_score.append(plus)
+		else:
+			row_score.append(minus)
+	print(' '.join(row_score))
+		
+# 42 Pythagorean Triples
+for i in range(1, 100):
+	for j in range(i + 1, 100):
+		triple = (i**2 + j**2)**0.5
+		if triple % 1 == 0 and triple <= 100:
+			print(i, j, triple)
+		else:
+			continue
+
+# 43 Birthday Paradox (People List)
+c = int(sys.argv[4])
+n = int(sys.argv[5])
+t = int(sys.argv[6])
+
+matches = 0
+for i in range(t):
+	classroom = [] 
+	for j in range(n):
+		birthday = random.randint(0, c - 1)
+		if birthday in classroom:
+			matches += 1
+			break
+		classroom.append(birthday)
+print(matches/t)
+
+# 44 Birthday Paradox (Calendar List)
+c = int(sys.argv[4])
+n = int(sys.argv[5])
+t = int(sys.argv[6])
+
+matches2 = 0
+for i in range(t):
+	calendar = [0] * c
+	for j in range(n):
+		birthday2 = random.randint(0, c - 1)
+		calendar[birthday2] += 1
+		if calendar[birthday2] > 1:
+			matches2 += 1
+			break
+print(matches2/t)
+
+# 45 PolyAAA Function
+def polya(dna):
+	longest_a = 0
+	for i in range(len(dna)):
+		if dna[i] == 'A': 
+			current_a = 1
+			for j in range(1, len(dna) - i):
+				if dna[i+j] == 'A': current_a += 1
+				if current_a > longest_a: longest_a = current_a
+				if dna[i+j] != 'A': break
+	return longest_a
+
+# 46 Character Count
+string = sys.argv[7]
+
+list = []
+char_count = []
+for i in range(len(string)):
+	if string[i] not in list:
+		list.append(string[i])
+		char_count.append(1)
+	elif string[i] in list:
+		idx = list.index(string[i])
+		char_count[idx] += 1
+print_list = []
+for j in range(len(list)):
+	if list[j] != ' ':
+		print_list.append(list[j])		
+	if list[j] == ' ':
+		print_list.append(ord(list[j]))
+	print(print_list[j], char_count[j])
+
+# 47 Read FASTA
+def read_fasta(filepath):
+	file = open(filepath)
+	sequence = []
+	for i in file:
+		if i[0] == '>':
+			defline = i[0:]	
+		else: 
+			sequence.append(i)
+			sequence[line[::-1]].pop()
+	return defline, ''.join(sequence)
+print(read_fasta(sys.argv[8]))
+
+# 48 GC Analysis
+
+# 49 Low Entropy Masing

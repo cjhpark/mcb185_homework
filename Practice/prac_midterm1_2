@@ -1,0 +1,146 @@
+# prac_midterm1_2 Chris Park
+import math
+import sys
+import random
+
+# 0 Print
+print('Hello World!')
+
+# 1 Math
+a = 3
+b = 4
+print((a**2 + b**2)**0.5)
+
+# 2 ASCII
+print(ord('A'), ord('a'))
+
+# 3 Rounding
+print(round(math.log2(math.pi), 6), round(math.e, 6), sep='\t')
+
+# 4 Fahrenheit to Celcius
+def ftoc(x):
+	return (x - 32) * 5 / 9
+
+# 5 Miles to Kilometers Per hour
+def mph_to_kph(x):
+	return 1.6 * x 
+
+# 6 Integer Booleans
+def is_int(x):
+	if x % 1 == 0:	return True
+	else:		return False
+
+# 7 Probability Booleans
+def is_prob(x):
+	if x <= 1 and x >= 0:	return True
+	else:			return False
+
+# 8 Nucleotide Complememnt
+def complement(nt):
+	nts = ['A', 'C', 'G', 'T']
+	comps =	['T', 'G', 'C', 'A']
+	if nt not in nts:
+		return 'Not a Nucleotide'
+	idx = nts.index(nt)
+	return comps[idx]
+
+# 9 Phred to Probability
+def phred_to_prob(c):
+	return 10**((ord(c)-33)/(-10))
+
+# 10 Probability to Phred
+def prob_to_phred(p):
+	return chr(round((-10)*math.log10(p))+33)
+
+# 11 Pythagoras
+def pythagoras(a, b):
+	return (a**2 + b**2)**0.5
+
+# 12 Three Max
+def max3(a, b, c):
+	max = a
+	if b > a and b > c:	max = b
+	elif c > b:		max = c
+	else:			max = a
+	return max
+
+# 13 2D Distance
+def distance(x1, y1, x2, y2):
+	return ((y2 - y1)**2 + (x2 - x1)**2)**0.5
+
+# 14 Triangular Numbers
+def triangular(n):
+	return n*(n+1)/2
+
+# 15 Factorial
+def factorial(n):
+	fact = 1
+	if n == 0:	
+		return fact
+	for i in range(n):
+		fact *= (n-i)	
+	return fact
+
+#16 Prime Booleans		
+def is_prime(n):
+	if n % 1 != 0 or n <0:		sys.exit('Not a valid number.')
+	if n == 0 or n == 1:		return False 
+	if n == 2:			return True
+	elif n % 2 == 0:		return False
+	for i in range(3, n, 2):
+		if n % i == 0:		return False
+	else:				return True 
+
+#17 FizzBuzzPrime
+for i in range(1, 101):
+	c = ''
+	out = i
+	if is_prime(i) is True: c = '* '
+	if i % 5 == 0 and i % 3 == 0:	
+		out = 'FizzBuzz'
+	elif i % 5 == 0:		
+		out = 'Buzz'
+	elif i % 3 == 0:		
+		out = 'Fizz'
+	print(out, c, sep='', end=' ')
+	print()
+
+# 18 Fibonacci Sequence
+ppre = -1
+pre = 1
+fib = 0
+for i in range(100):
+	fib = ppre + pre
+	print(fib)
+	ppre = pre
+	pre = fib
+
+# 19 Euler Approximation
+current = 0
+status = True
+i = 0
+while status == True:
+	previous = current
+	current += (1/math.factorial(i))
+	print(current)
+	i += 1
+	if current == previous:
+		status = False
+
+# Nilakantha Approximation
+flipflop = True
+pi_approx = 3
+i = 1
+prev = 0
+while abs(pi_approx - prev) > 10**-6:
+	prev = pi_approx
+	if flipflop == True:
+		pi_approx += 4/((2*i)*(2*i+1)*(2*i+2))
+	if flipflop == False:
+		pi_approx -= 4/((2*i)*(2*i+1)*(2*i+2)) 
+	flipflop = not flipflop
+	i += 1
+	print(pi_approx)
+
+
+
